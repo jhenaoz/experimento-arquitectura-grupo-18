@@ -1,0 +1,103 @@
+[
+    {
+        "Id": "sha256:86e25a7c4a571dcdde4c692c8a447672e701886c95e9968dc86470ee93f6853d",
+        "RepoTags": [
+            "flask-web:latest",
+            "gcr.io/certain-arcana-251421/flask-web:v1.0",
+            "gcr.io/my-project/flask-web:v1.0",
+            "gcr.io/my-project/flask-web:v1.1"
+        ],
+        "RepoDigests": [
+            "gcr.io/certain-arcana-251421/flask-web@sha256:deaac0028afbc5bc62f93996dc808fc6713c968cecc435d6e7661fa659deccda"
+        ],
+        "Parent": "",
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2023-02-15T22:10:05.795191292Z",
+        "Container": "",
+        "ContainerConfig": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": null,
+            "Cmd": null,
+            "Image": "",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": null
+        },
+        "DockerVersion": "",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D",
+                "PYTHON_VERSION=3.10.10",
+                "PYTHON_PIP_VERSION=22.3.1",
+                "PYTHON_SETUPTOOLS_VERSION=65.5.1",
+                "PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/1a96dc5acd0303c4700e02655aefd3bc68c78958/public/get-pip.py",
+                "PYTHON_GET_PIP_SHA256=d1d09b0f9e745610657a528689ba3ea44a73bd19c60f4c954271b790c71c2653"
+            ],
+            "Cmd": [
+                "app.py"
+            ],
+            "ArgsEscaped": true,
+            "Image": "",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": [
+                "python3"
+            ],
+            "OnBuild": null,
+            "Labels": null
+        },
+        "Architecture": "arm64",
+        "Variant": "v8",
+        "Os": "linux",
+        "Size": 65227778,
+        "VirtualSize": 65227778,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/408dxl1t1csd78ekfav6j1lsm/diff:/var/lib/docker/overlay2/cgtixayyrz5br4003ty7ick78/diff:/var/lib/docker/overlay2/yypicgo2npey6putc8thzlhls/diff:/var/lib/docker/overlay2/8bc911998906972c19306e15c02e7a086845243a2ecaa0ca3aafc71f8b114f96/diff:/var/lib/docker/overlay2/6a3ada8ca917320b2831ee0b1dc0080e796b6dc2b38d2458ba7a91af577a25b8/diff:/var/lib/docker/overlay2/56214ce29135f7998610d3ee4e970493d7246f57e486be017db24df650ab3002/diff:/var/lib/docker/overlay2/37521b9afb5fd9d5515b500844e8f2740172bc4ae45b0594f1b57b6fe7f5713e/diff:/var/lib/docker/overlay2/98982c57d2d72b9f6b0464b2b34d6a8a6a75d60ed8752af786cf57fe0a98f8f9/diff",
+                "MergedDir": "/var/lib/docker/overlay2/sss2fhr3akrnbxuao6g8uxbuj/merged",
+                "UpperDir": "/var/lib/docker/overlay2/sss2fhr3akrnbxuao6g8uxbuj/diff",
+                "WorkDir": "/var/lib/docker/overlay2/sss2fhr3akrnbxuao6g8uxbuj/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:edf70074bd40c0b1216367c29c18d453b43cc69e5123268ba66dd45d86a9e8a8",
+                "sha256:2b6d33d15c9f2a4c4620f9b30afde93cdc72b3a4d50177d3b4ab5f9eaa02d60f",
+                "sha256:f97d0e7a6cf03f1d92ee8d75ef04e4fa6aecd5439d5fa22d382a91f4a5cd3a73",
+                "sha256:43d46e273c36aac8be33a8562f5a08e2ddd718a2d98642266c3251526ea2434d",
+                "sha256:c94fb52e1f998f2ecb7d498f3fba34e4dd191bdf80360073017123065f2386cd",
+                "sha256:e788541a3b07e7cd7cbee046813a4276c6de9bba3d59772af01f1f89a74f86ef",
+                "sha256:559f91fb217e52da37e28fe9c776224618857fd280d27dceddc0577e13dfbfa0",
+                "sha256:dca7685c493a051e49190d3d94517440a610095bc07872d4fa7ea1fbb04f3f75",
+                "sha256:d7b37230ecbacfe29586e78d253ffeabe299dd9c651c8f2cb78985217f2aa478"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2023-02-15T22:24:27.781379594Z"
+        }
+    }
+]
