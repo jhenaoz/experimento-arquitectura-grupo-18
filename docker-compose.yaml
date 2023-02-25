@@ -2,7 +2,7 @@ version: '3.4'
 services:
   web: 
     build:
-      context: .
+      context: app
       dockerfile: Dockerfile
       target: builder
     # flask requires SIGINT to stop gracefully
