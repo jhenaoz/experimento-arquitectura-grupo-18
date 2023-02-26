@@ -18,6 +18,3 @@ jobs:
         with:
           SERVICE_ACCOUNT_KEY: ${{ secrets.JSON_GCLOUD_SERVICE_ACCOUNT_JSON }}
           HOST: 'gcr.io'
-        run: |
-          docker tag flask-app gcr.io/experimento1/flask-web-experimento1:v1.0
-          docker push gcr.io/experimento1/flask-web-experimento1:v1.0
