@@ -10,8 +10,8 @@ class EnumEstado(enum.Enum):
 
 class DetalleEntrega(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    fecha_salida = db.Column(db.Date)
-    fecha_llegada = db.Column(db.Date)
+    #fecha_salida = db.Column(db.Date)
+    #fecha_llegada = db.Column(db.Date)
     fotos = db.Column(db.String(512))
     notas = db.Column(db.String(512))
     status = db.Column(db.Enum(EnumEstado))
@@ -24,5 +24,10 @@ class DetalleEntregaSchema(Schema):
         load_instance = True
 
     id = fields.String()
+    #fecha_salida = fields.Date()
+    #fecha_llegada = fields.Date()
+    fotos = fields.String()
+    notas = fields.String()
     status = EnumEstado
     volumen = fields.String()
+
