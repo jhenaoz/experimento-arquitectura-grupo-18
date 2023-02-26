@@ -12,3 +12,9 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build ./app --file ./app/Dockerfile --tag flask-web:$(date +%s)
+    - name: Login Docker
+      uses: 'lagren/docker-gcr-action@master'
+      with:
+        SERVICE_ACCOUNT_KEY: ${{ secrets.JSON_GCLOUD_SERVICE_ACCOUNT_JSON }}
+        HOST: 'gcr.io'
+      run: docker images
