@@ -9,6 +9,8 @@ services:
     # (default stop signal from Compose is SIGTERM)
     stop_signal: SIGINT
     ports:
-      - '8000:8000'
+      - '5001:5001'
     volumes:
       - .:/app
+    entrypoint: ["flask","run", "--host=0.0.0.0", "-p 5001"]
+    # entrypoint: ["tail", "-f", "./app/app.py"]
