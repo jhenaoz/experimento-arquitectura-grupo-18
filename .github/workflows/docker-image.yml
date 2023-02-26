@@ -11,10 +11,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build ./app --file ./app/Dockerfile --tag flask-web:$(date +%s)
+      run: docker build -t flask-web-experimento1 .  --tag flask-web-experimento1
     - name: Login Docker
       uses: 'lagren/docker-gcr-action@master'
       with:
         SERVICE_ACCOUNT_KEY: ${{ secrets.JSON_GCLOUD_SERVICE_ACCOUNT_JSON }}
         HOST: 'gcr.io'
-      run: docker images
+      run: docker tag flask-app gcr.io/experimento1/flask-web-experimento1:v1.0
+      run: docker push gcr.io/experimento1/flask-web-experimento1:v1.0
