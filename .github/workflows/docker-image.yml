@@ -11,13 +11,28 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Login Docker Registry
-        uses: 'lagren/docker-gcr-action@master'
+      - name: Authenticate to Google Cloud
+        id: auth
+        uses: google-github-actions/auth@v0
         with:
-          SERVICE_ACCOUNT_KEY: ${{ secrets.JSON_GCLOUD_SERVICE_ACCOUNT_JSON }}
-          HOST: 'us.gcr.io/logical-codex-378402/flask-web-experimento1'
-      - name: Build the Docker image
-        run: |
-          docker build -t us.gcr.io/logical-codex-378402/flask-web-experimento1:latest .
-          docker tag us.gcr.io/logical-codex-378402/flask-web-experimento1:latest us.gcr.io/cox2m-docker-images/fleet/fleet-location-service:latest
-          docker push us.gcr.io/logical-codex-378402/flask-web-experimento1:latest
+          credentials_json: '${{ secrets.JSON_GCLOUD_SERVICE_ACCOUNT_JSON }}'
+      - name: Building and pushing the image
+        uses: ./
+        # uses: RafikFarhad/push-to-gcr-github-action@v5-beta # <- use this on your workflow
+        with:
+          # gcloud_service_key: ${{ secrets.JSON_GCLOUD_SERVICE_ACCOUNT_JSON }} # <- not needed when used with google-github-actions/auth@v0
+          registry: gcr.io
+          project_id: logical-codex-378402
+          image_name: flask-web-experimento1
+          image_tag: test-${{ github.sha }}, ${{ github.sha }}
+          dockerfile: Dockerfile
+      # - name: Login Docker Registry
+      #   uses: 'lagren/docker-gcr-action@master'
+      #   with:
+      #     SERVICE_ACCOUNT_KEY: ${{ secrets.JSON_GCLOUD_SERVICE_ACCOUNT_JSON }}
+      #     HOST: 'us.gcr.io/logical-codex-378402/flask-web-experimento1'
+      # - name: Build the Docker image
+      #   run: |
+      #     docker build -t us.gcr.io/logical-codex-378402/flask-web-experimento1:latest .
+      #     docker tag us.gcr.io/logical-codex-378402/flask-web-experimento1:latest us.gcr.io/cox2m-docker-images/fleet/fleet-location-service:latest
+      #     docker push us.gcr.io/logical-codex-378402/flask-web-experimento1:latest
