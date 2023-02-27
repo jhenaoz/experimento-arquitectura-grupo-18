@@ -11,10 +11,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Build the Docker image
-        run: docker build -t flask-web-experimento1 .  --tag flask-web-experimento1
-      - name: Login Docker
+      - name: Login Docker Registry
         uses: 'lagren/docker-gcr-action@master'
         with:
           SERVICE_ACCOUNT_KEY: ${{ secrets.JSON_GCLOUD_SERVICE_ACCOUNT_JSON }}
           HOST: 'us.gcr.io/logical-codex-378402/flask-web-experimento1'
+      - name: Build the Docker image
+        run: |
+          docker build -t us.gcr.io/logical-codex-378402/flask-web-experimento1:latest
+          docker tag us.gcr.io/logical-codex-378402/flask-web-experimento1:latest
+          docker push us.gcr.io/logical-codex-378402/flask-web-experimento1:latest
