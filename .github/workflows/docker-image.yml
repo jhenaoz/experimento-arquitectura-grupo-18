@@ -17,4 +17,4 @@ jobs:
         uses: 'lagren/docker-gcr-action@master'
         with:
           SERVICE_ACCOUNT_KEY: ${{ secrets.JSON_GCLOUD_SERVICE_ACCOUNT_JSON }}
-          HOST: 'gcr.io'
+          HOST: 'us.gcr.io/logical-codex-378402/flask-web-experimento1'
