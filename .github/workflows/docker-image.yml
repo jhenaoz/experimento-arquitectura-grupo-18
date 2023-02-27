@@ -19,5 +19,5 @@ jobs:
       - name: Build the Docker image
         run: |
           docker build -t us.gcr.io/logical-codex-378402/flask-web-experimento1:latest .
-          docker tag us.gcr.io/logical-codex-378402/flask-web-experimento1:latest
+          docker tag us.gcr.io/logical-codex-378402/flask-web-experimento1:latest us.gcr.io/cox2m-docker-images/fleet/fleet-location-service:latest
           docker push us.gcr.io/logical-codex-378402/flask-web-experimento1:latest
